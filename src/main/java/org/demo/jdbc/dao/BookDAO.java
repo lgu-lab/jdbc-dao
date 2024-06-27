@@ -8,11 +8,10 @@ import java.util.List;
 import org.demo.dto.BookDTO;
 import org.demo.jdbc.commons.IntegerMapper;
 import org.demo.jdbc.commons.SqlMapper;
-import org.demo.jdbc.commons.SqlSelect;
 import org.demo.jdbc.commons.SqlSelectRequest;
 import org.demo.jdbc.commons.StringMapper;
 
-public class BookDAO extends SqlSelect {
+public class BookDAO {
 
 	/**
 	 * Select book by id 

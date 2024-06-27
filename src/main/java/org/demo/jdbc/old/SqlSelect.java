@@ -1,4 +1,4 @@
-package org.demo.jdbc.commons;
+package org.demo.jdbc.old;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+
+import org.demo.jdbc.commons.ConnectionProvider;
+import org.demo.jdbc.commons.SqlMapper;
 
 public abstract class SqlSelect {
 //public abstract class SqlSelect {

@@ -1,4 +1,4 @@
-package org.demo.jdbc.dao;
+package org.demo.jdbc.old;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.demo.dto.BookDTO;
 import org.demo.jdbc.commons.SqlMapper;
-import org.demo.jdbc.commons.SqlSelect;
 
 public class BookDAO_bak extends SqlSelect {
 
