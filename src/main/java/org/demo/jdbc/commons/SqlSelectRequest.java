@@ -24,17 +24,6 @@ public class SqlSelectRequest<T> {
 		this.mapper = mapper;
 	}
 
-//	public SqlSelectRequest(String sqlRequest, SingleValueType type) {
-//		super();
-//		this.sqlRequest = sqlRequest;
-//
-//		this.mapper = switch(type) {
-//		case INT : yield new IntegerMapper();
-//		case STRING : yield new StringMapper();
-//		};
-//	}
-
-	
 	private List<T> select(List<Object> parameters, int max) throws SQLException {
         try (Connection connection = ConnectionProvider.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(sqlRequest) ) {

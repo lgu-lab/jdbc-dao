@@ -20,20 +20,6 @@ public class BookDAO extends SqlSelect {
 	 * @return
 	 * @throws SQLException
 	 */
-//	public BookDTO selectById(int id) throws SQLException {
-//		return selectById.executeSelectOne(Arrays.asList(id));
-//	}
-//	private final SelectById selectById = new SelectById();
-//	private class SelectById extends SqlSelectRequest<BookDTO> {
-//		private static final String SQL = """
-//				SELECT id, title
-//				FROM books
-//				WHERE id = ?
-//				""";
-//		protected SelectById() {
-//			super(SQL, new BookMapper());
-//		}
-//	}	
 	public BookDTO selectById(int id) throws SQLException {
 		String SQL = 
 				"""
@@ -45,6 +31,12 @@ public class BookDAO extends SqlSelect {
 		return sql.executeSelectOne(Arrays.asList(id));
 	}
 
+	/**
+	 * Select book title for the given id
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
 	public String selectTitleById(int id) throws SQLException {
 		String SQL = 
 				"""
@@ -61,15 +53,6 @@ public class BookDAO extends SqlSelect {
 	 * @return
 	 * @throws SQLException
 	 */
-//	public int selectCount() throws SQLException {
-//		return selectCount.executeSelectOne();
-//	}
-//	private final SelectCount selectCount = new SelectCount();
-//	private class SelectCount extends SqlSelectRequest<Integer> {
-//		protected SelectCount() {
-//			super("SELECT count(*) FROM books", new IntegerMapper());
-//		}		
-//	}
 	public int selectCount() throws SQLException {
 		String SQL = 
 				"""
@@ -79,12 +62,6 @@ public class BookDAO extends SqlSelect {
 		SqlSelectRequest<Integer> sql = new SqlSelectRequest<>(SQL, new IntegerMapper());
 		return sql.executeSelectOne();
 	}
-//	private final SelectCount selectCount = new SelectCount();
-//	private class SelectCount extends SqlSelectRequest<Integer> {
-//		protected SelectCount() {
-//			super("SELECT count(*) FROM books", new IntegerMapper());
-//		}		
-//	}
 
 	// -------------------------------------------------------------------------------------------
 	/**
@@ -92,16 +69,6 @@ public class BookDAO extends SqlSelect {
 	 * @return
 	 * @throws SQLException
 	 */
-//	public List<BookDTO> selectAll() throws SQLException {
-//		return selectAll.executeSelectMany();
-//	}
-//	private final SelectAll selectAll = new SelectAll();
-//	private class SelectAll extends SqlSelectRequest<BookDTO> {
-//		private static final String SQL = "SELECT id, title FROM books";
-//		protected SelectAll() {
-//			super(SQL, new BookMapper());
-//		}	
-//	}
 	public List<BookDTO> selectAll() throws SQLException {
 		String SQL = 
 				"""
@@ -125,11 +92,4 @@ public class BookDAO extends SqlSelect {
 		}
 	}
 
-//	// -------------------------------------------------------------------------------------------
-//	private class IntegerMapper implements SqlMapper<Integer> {
-//		@Override
-//		public Integer mapRow(ResultSet rs, int rowNum) throws SQLException {
-//			return Integer.valueOf(rs.getInt(1));
-//		}
-//	}
 }
